@@ -69,7 +69,7 @@ permalink: /blog/
       <div class="no-posts">
         <h3>🎉 即将更新</h3>
         <p>博客文章正在准备中，敬请期待！</p>
-        <p>你可以先浏览我的<a href="/about/">个人介绍</a>、<a href="/research/">科研成果</a>或<a href="/projects/">代码项目</a>。</p>
+        <p>你可以先浏览我的<a href="{{ '/about/' | relative_url }}">个人介绍</a>、<a href="{{ '/research/' | relative_url }}">科研成果</a>或<a href="{{ '/projects/' | relative_url }}">代码项目</a>。</p>
       </div>
     {% endif %}
 

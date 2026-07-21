@@ -1,0 +1,39 @@
+```
+# Configuration and build artifacts for Jekyll/GitHub Pages
+_config.yml
+_layouts/
+_pages/
+_posts/
+assets/css/
+
+# Logs and temporary files
+*.log
+*.tmp
+*.swp
+
+# Environment variables
+.env
+.env.local
+.env.*
+
+# Editor/IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Coverage reports
+coverage/
+htmlcov/
+.coverage
+
+# Dependency directories
+node_modules/
+vendor/bundle/
+.jekyll-cache/
+_site/
+```

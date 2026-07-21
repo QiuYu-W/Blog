@@ -1,8 +1,8 @@
 # 网站配置
 title: "你的姓名 | 个人学术博客"
 description: "研究人员、开发者、技术爱好者 - 分享科研成果与编程心得"
-baseurl: "" # 如果有子路径，例如 /blog，请在此填写
-url: "https://your-username.github.io" # 替换为你的 GitHub Pages 域名
+baseurl: "" # 如果有子路径，例如 /blog，请在此填写，注意不要以斜杠开头
+url: "" # GitHub Pages 会自动设置，留空即可
 
 # 作者信息
 author:

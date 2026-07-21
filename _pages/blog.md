@@ -28,13 +28,13 @@ permalink: /blog/
                 {% endif %}
               </div>
             </header>
-            
+
             {% if post.description %}
               <p class="post-item-description">{{ post.description }}</p>
             {% else %}
               <p class="post-item-excerpt">{{ post.excerpt | strip_html | truncate: 200 }}</p>
             {% endif %}
-            
+
             <footer class="post-item-footer">
               <a href="{{ post.url | relative_url }}" class="read-more">阅读全文 →</a>
               {% if post.tags %}
@@ -56,9 +56,9 @@ permalink: /blog/
         {% else %}
           <span class="btn disabled">← 上一页</span>
         {% endif %}
-        
+
         <span class="page-number">第 {{ paginator.page }} 页 / 共 {{ paginator.total_pages }} 页</span>
-        
+
         {% if paginator.next_page %}
           <a href="{{ paginator.next_page_path | relative_url }}" class="btn">下一页 →</a>
         {% else %}
@@ -78,7 +78,7 @@ permalink: /blog/
       <section class="categories-section">
         <h2>📚 文章分类</h2>
         <div class="categories-cloud">
-          {% assign categories = site.categories | sort %}
+          {% assign categories = site.categories %}
           {% for category in categories %}
             {% assign category_name = category | first %}
             {% assign category_count = category | last | size %}
@@ -273,17 +273,17 @@ permalink: /blog/
   .post-item-title a {
     font-size: 1.5rem;
   }
-  
+
   .post-item-meta {
     flex-direction: column;
     gap: 0.5rem;
   }
-  
+
   .post-item-footer {
     flex-direction: column;
     align-items: flex-start;
   }
-  
+
   .pagination {
     flex-direction: column;
     gap: 1rem;

@@ -43,7 +43,7 @@ comments:
 # Google Analytics（可选）
 # google_analytics: UA-XXXXXXXXX-X
 
-# 导航菜单
+# 导航菜单 - 确保这些页面存在
 nav_pages:
   - title: "首页"
     url: "/"

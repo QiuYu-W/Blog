@@ -1,0 +1,72 @@
+# 网站配置
+title: "你的姓名 | 个人学术博客"
+description: "研究人员、开发者、技术爱好者 - 分享科研成果与编程心得"
+baseurl: "" # 如果有子路径，例如 /blog，请在此填写
+url: "https://your-username.github.io" # 替换为你的 GitHub Pages 域名
+
+# 作者信息
+author:
+  name: Your Name
+  email: your.email@example.com
+  bio: "人工智能研究者 | 开源爱好者 | 技术博主"
+  avatar: "/assets/images/avatar.jpg" # 头像图片路径
+  location: "北京，中国"
+  website: "https://your-website.com"
+  
+# 社交媒体链接
+social:
+  github: https://github.com/your-username
+  twitter: https://twitter.com/your-username
+  linkedin: https://linkedin.com/in/your-username
+  google_scholar: https://scholar.google.com/citations?user=YOUR_ID
+  researchgate: https://www.researchgate.net/profile/YOUR_NAME
+  zhihu: https://www.zhihu.com/people/your-zhihu
+
+# 构建设置
+markdown: kramdown
+highlighter: rouge
+permalink: /blog/:year/:month/:day/:title/
+timezone: Asia/Shanghai
+
+# 首页显示的文章数量
+paginate: 5
+paginate_path: "/blog/page:num/"
+
+# 评论系统（utterances）
+comments:
+  enabled: false
+  repository: "your-username/your-username.github.io" # 替换为你的仓库
+  issue_term: "pathname"
+  label: "comments"
+  theme: "github-light"
+
+# Google Analytics（可选）
+# google_analytics: UA-XXXXXXXXX-X
+
+# 导航菜单
+nav_pages:
+  - title: "首页"
+    url: "/"
+  - title: "关于我"
+    url: "/about/"
+  - title: "科研成果"
+    url: "/research/"
+  - title: "代码项目"
+    url: "/projects/"
+  - title: "博客"
+    url: "/blog/"
+
+# 排除文件
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - .gitignore
+  - .github
+
+# 插件（GitHub Pages 会自动加载）
+plugins:
+  - jekyll-paginate
+  - jekyll-seo-tag
+  - jekyll-sitemap

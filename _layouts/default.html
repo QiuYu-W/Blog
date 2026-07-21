@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <title>{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+  
+  <!-- SEO -->
+  {% seo %}
+  
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ '/feed.xml' | relative_url }}">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎓</text></svg>">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrapper">
+      <nav class="site-nav">
+        <a class="site-title" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+        <div class="nav-links">
+          {% for nav_page in site.nav_pages %}
+          <a class="nav-link {% if page.url == nav_page.url %}active{% endif %}" href="{{ nav_page.url | relative_url }}">{{ nav_page.title }}</a>
+          {% endfor %}
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-content" aria-label="Content">
+    <div class="wrapper">
+      {{ content }}
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrapper">
+      <div class="social-links">
+        {% if site.social.github %}
+        <a href="{{ site.social.github }}" class="social-link" target="_blank" rel="noopener">GitHub</a>
+        {% endif %}
+        {% if site.social.twitter %}
+        <a href="{{ site.social.twitter }}" class="social-link" target="_blank" rel="noopener">Twitter</a>
+        {% endif %}
+        {% if site.social.linkedin %}
+        <a href="{{ site.social.linkedin }}" class="social-link" target="_blank" rel="noopener">LinkedIn</a>
+        {% endif %}
+        {% if site.social.google_scholar %}
+        <a href="{{ site.social.google_scholar }}" class="social-link" target="_blank" rel="noopener">Google Scholar</a>
+        {% endif %}
+        {% if site.social.zhihu %}
+        <a href="{{ site.social.zhihu }}" class="social-link" target="_blank" rel="noopener">知乎</a>
+        {% endif %}
+      </div>
+      <p>&copy; {{ site.time | date: '%Y' }} {{ site.author.name }}. All rights reserved.</p>
+      <p>Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> & <a href="https://pages.github.com/" target="_blank">GitHub Pages</a></p>
+    </div>
+  </footer>
+
+  <!-- Comments -->
+  {% if page.comments != false and site.comments.enabled %}
+  <script src="https://utteranc.es/client.js"
+          repo="{{ site.comments.repository }}"
+          issue-term="{{ site.comments.issue_term }}"
+          label="{{ site.comments.label }}"
+          theme="{{ site.comments.theme }}"
+          crossorigin="anonymous"
+          async>
+  </script>
+  {% endif %}
+
+  <!-- Google Analytics -->
+  {% if site.google_analytics %}
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', '{{ site.google_analytics }}');
+  </script>
+  {% endif %}
+</body>
+</html>

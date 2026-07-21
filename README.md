@@ -1,150 +1,200 @@
 # 个人学术博客网站
 
-这是一个基于 Jekyll 构建的个人学术博客网站，专为研究人员和开发者设计，用于展示个人信息、科研成果、代码项目和博客文章。
+这是一个基于 Jekyll 构建的个人学术博客网站，专为研究人员、开发者和技术爱好者设计。
 
-## ✨ 特点
+## ✨ 功能特点
 
-- 🎯 **简洁易用** - 只需编辑 Markdown 文件即可更新内容
-- 📱 **响应式设计** - 完美适配桌面和移动设备
-- 🔬 **学术导向** - 专门的科研成果展示页面
-- 💻 **项目展示** - 代码项目卡片式布局
-- 📝 **博客功能** - 支持分类、标签和评论
-- 🚀 **GitHub Pages** - 免费托管，自动部署
+- 📝 **完整的博客系统** - 支持文章分类、标签、分页和评论
+- 🔬 **学术导向设计** - 专门展示论文、研究项目和专利成果
+- 💻 **项目展示** - 开源项目和技术作品展示页面
+- 📱 **响应式设计** - 完美适配桌面端和移动端
+- 🎨 **现代化 UI** - 简洁美观的界面设计
+- 🔍 **SEO 优化** - 内置 SEO 标签，提升搜索引擎排名
+- 🚀 **自动部署** - 通过 GitHub Actions 自动构建和部署
 
 ## 📁 目录结构
 
 ```
 .
 ├── _config.yml           # 网站配置文件
-├── _layouts/             # 页面模板
-│   └── default.html      # 默认布局模板
-├── _pages/               # 静态页面
-│   ├── about.md          # 关于我
-│   ├── research.md       # 科研成果
-│   ├── projects.md       # 代码项目
-│   └── blog.md           # 博客列表
-├── _posts/               # 博客文章
-│   └── 2024-01-15-welcome.md
-├── assets/               # 静态资源
-│   ├── css/
-│   │   └── style.css     # 样式文件
-│   └── images/           # 图片资源
+├── Gemfile               # Ruby 依赖文件
 ├── index.md              # 首页
-└── README.md             # 说明文档
+├── _layouts/
+│   └── default.html      # 默认布局模板
+├── _pages/
+│   ├── about.md          # 关于我页面
+│   ├── research.md       # 科研成果页面
+│   ├── projects.md       # 代码项目页面
+│   └── blog.md           # 博客列表页面
+├── _posts/
+│   └── 2024-01-15-welcome.md  # 示例博客文章
+├── assets/
+│   └── css/
+│       └── style.css     # 样式文件
+└── .github/
+    └── workflows/
+        └── jekyll.yml    # GitHub Actions 配置
 ```
 
 ## 🚀 快速开始
 
-### 1. Fork 并克隆仓库
+### 本地预览
 
-```bash
-git clone https://github.com/your-username/your-username.github.io.git
-cd your-username.github.io
-```
+1. **安装 Ruby 和 Bundler**
+   ```bash
+   # macOS
+   brew install ruby
+   gem install bundler
 
-### 2. 个性化配置
+   # Ubuntu/Debian
+   sudo apt-get install ruby-full
+   gem install bundler
+   ```
 
-编辑 `_config.yml` 文件，修改以下信息：
+2. **安装依赖**
+   ```bash
+   bundle install
+   ```
+
+3. **启动本地服务器**
+   ```bash
+   bundle exec jekyll serve
+   ```
+
+4. **访问网站**
+   打开浏览器访问 `http://localhost:4000`
+
+### GitHub Pages 部署
+
+1. **Fork 或克隆此仓库**
+
+2. **修改配置文件 `_config.yml`**
+   - 更新 `title`、`description` 等基本信息
+   - 填写你的个人信息（姓名、邮箱、简介等）
+   - 配置社交媒体链接
+   - 如有需要，设置 `baseurl`（例如：`/my-blog`）
+
+3. **推送代码到 GitHub**
+   ```bash
+   git add .
+   git commit -m "Initial commit"
+   git push origin main
+   ```
+
+4. **启用 GitHub Pages**
+   - 进入仓库 Settings → Pages
+   - Source 选择 "Deploy from a branch"
+   - Branch 选择 "main"，文件夹选择 "/ (root)"
+   - 点击 Save
+
+5. **访问你的网站**
+   等待几分钟后，访问 `https://your-username.github.io`
+
+## ⚙️ 配置说明
+
+### 基本信息 (`_config.yml`)
 
 ```yaml
-title: "你的姓名"
-description: "你的个人简介"
+title: "你的姓名 | 个人学术博客"
+description: "研究人员、开发者、技术爱好者 - 分享科研成果与编程心得"
+baseurl: ""  # 如果有子路径，例如 /blog
+url: "https://your-username.github.io"
+```
+
+### 作者信息
+
+```yaml
 author:
   name: Your Name
   email: your.email@example.com
-  bio: "你的个人标签"
+  bio: "人工智能研究者 | 开源爱好者 | 技术博主"
+  avatar: "/assets/images/avatar.jpg"
+  location: "北京，中国"
+  website: "https://your-website.com"
+```
+
+### 社交媒体链接
+
+```yaml
 social:
   github: https://github.com/your-username
   twitter: https://twitter.com/your-username
-  google_scholar: https://scholar.google.com/...
+  linkedin: https://linkedin.com/in/your-username
+  google_scholar: https://scholar.google.com/citations?user=YOUR_ID
+  zhihu: https://www.zhihu.com/people/your-zhihu
 ```
 
-### 3. 添加头像（可选）
+## 📝 写作指南
 
-将你的头像图片命名为 `avatar.jpg` 并放入 `assets/images/` 目录。
+### 创建新文章
 
-### 4. 本地预览
-
-安装 Jekyll 后运行：
-
-```bash
-bundle install
-bundle exec jekyll serve
-```
-
-在浏览器中访问 `http://localhost:4000`
-
-### 5. 部署到 GitHub Pages
-
-```bash
-git add .
-git commit -m "初始化博客网站"
-git push origin main
-```
-
-访问 `https://your-username.github.io` 即可看到你的网站！
-
-## 📝 如何更新内容
-
-### 添加博客文章
-
-在 `_posts/` 目录创建新文件，命名格式为 `YYYY-MM-DD-title.md`：
+在 `_posts/` 目录下创建新文件，命名格式为 `YYYY-MM-DD-title.md`：
 
 ```markdown
 ---
 layout: default
 title: 文章标题
-date: 2024-01-20 10:00:00 +0800
-categories: [技术，教程]
-tags: [Python, AI]
-description: "文章简介"
+date: 2024-01-15 10:00:00 +0800
+categories: [技术，生活]
+tags: [Jekyll, GitHub Pages]
+description: "文章描述"
 ---
 
 这里是文章内容...
 ```
 
-### 更新科研成果
+### 支持的 Markdown 语法
 
-编辑 `_pages/research.md`，添加新的论文和项目信息。
+- 标题：`# H1`, `## H2`, `### H3`
+- 粗体：`**text**`
+- 斜体：`*text*`
+- 链接：`[text](url)`
+- 图片：`![alt](url)`
+- 代码块：\`\`\`language ... \`\`\`
+- 引用：`> text`
+- 列表：`- item` 或 `1. item`
 
-### 更新项目展示
+## 🎨 自定义样式
 
-编辑 `_pages/projects.md`，添加新的项目卡片。
+编辑 `assets/css/style.css` 文件来自定义网站样式。主要 CSS 变量：
 
-### 更新个人信息
+```css
+:root {
+  --primary-color: #0366d6;    /* 主色调 */
+  --secondary-color: #58a6ff;  /* 辅助色 */
+  --text-color: #333;          /* 文字颜色 */
+  --light-text: #666;          /* 浅色文字 */
+  --bg-color: #fff;            /* 背景色 */
+  --light-bg: #f9f9f9;         /* 浅色背景 */
+  --border-color: #eaeaea;     /* 边框颜色 */
+}
+```
 
-编辑 `_pages/about.md`，修改教育背景、工作经历等信息。
+## 🔧 高级功能
 
-## ⚙️ 高级配置
+### 评论系统
 
-### 启用评论系统
+使用 Utterances 评论系统（基于 GitHub Issues）：
 
-在 `_config.yml` 中配置 utterances：
+1. 在你的仓库中启用 Issues
+2. 在 `_config.yml` 中配置：
 
 ```yaml
 comments:
   enabled: true
   repository: "your-username/your-username.github.io"
-  issue-term: "pathname"
+  issue_term: "pathname"
   label: "comments"
   theme: "github-light"
 ```
 
-### 添加 Google Analytics
+### Google Analytics
 
 在 `_config.yml` 中添加：
 
 ```yaml
 google_analytics: UA-XXXXXXXXX-X
 ```
-
-## 🎨 自定义样式
-
-编辑 `assets/css/style.css` 来自定义网站外观。主要颜色变量：
-
-- 主色调：`#0366d6` (GitHub 蓝)
-- 背景色：`#f9f9f9`
-- 文字色：`#333`
 
 ## 📄 许可证
 
@@ -156,11 +206,9 @@ MIT License
 
 ## 📧 联系方式
 
-如有问题，请通过以下方式联系：
-
 - Email: your.email@example.com
-- GitHub Issues: [提交问题](https://github.com/your-username/your-username.github.io/issues)
+- GitHub: [@your-username](https://github.com/your-username)
 
 ---
 
-**祝你使用愉快！** 🎉
+**Happy Blogging! 🎉**

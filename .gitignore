@@ -1,21 +1,25 @@
 ```
 # Dependencies
-vendor/bundle/
-.bundle/
+node_modules/
 
 # Logs and temp files
 *.log
 *.tmp
-*.swp
 
 # Environment
 .env
 .env.local
-*.env.*
+.env.*
 
 # Editors
 .vscode/
 .idea/
+
+# Build artifacts
+_dist/
+_site/
+.jekyll-cache/
+.sass-cache/
 
 # OS generated files
 .DS_Store
